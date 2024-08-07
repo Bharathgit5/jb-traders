@@ -30,7 +30,7 @@ export default function Listing() {
     const fetchListing = async () => {
       try {
         setLoading(true);
-        const res = await fetch(`/api/listing/get/${params.listingId}`);
+        const res = await fetch(`/api/listing/get/₹{params.listingId}`);
         const data = await res.json();
         if (data.success === false) {
           setError(true);
@@ -62,7 +62,7 @@ export default function Listing() {
                 <div
                   className='h-[550px]'
                   style={{
-                    background: `url(${url}) center no-repeat`,
+                    background: `url(₹{url}) center no-repeat`,
                     backgroundSize: 'cover',
                   }}
                 ></div>
@@ -88,7 +88,7 @@ export default function Listing() {
           )}
           <div className='flex flex-col max-w-4xl mx-auto p-3 my-7 gap-4'>
             <p className='text-2xl font-semibold'>
-              {listing.name} - ${' '}
+              {listing.name} - ₹{' '}
               {listing.offer
                 ? listing.discountPrice.toLocaleString('en-US')
                 : listing.regularPrice.toLocaleString('en-US')}
@@ -104,7 +104,7 @@ export default function Listing() {
               </p>
               {listing.offer && (
                 <p className='bg-green-900 w-full max-w-[200px] text-white text-center p-1 rounded-md'>
-                  ${+listing.regularPrice - +listing.discountPrice} OFF
+                  ₹{+listing.regularPrice - +listing.discountPrice} OFF
                 </p>
               )}
             </div>

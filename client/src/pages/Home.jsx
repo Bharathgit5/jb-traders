@@ -62,13 +62,13 @@ export default function Home() {
         <div className="flex space-x-4 ">
   <Link
     to={'/search'}
-    className='text-xs sm:text-sm text-white font-bold hover:bg-green-900 px-4 py-2 rounded-lg w-40 bg-green-600 text-center'
+    className='text-xs sm:text-sm text-white font-bold hover:bg-green-900 px-4 py-3.5 rounded-lg w-40  bg-green-600 text-center'
     >
     Buy Now...
   </Link>
   <Link
     to={'/create-listing'}
-    className='text-xs sm:text-sm text-white font-bold hover:bg-red-900 px-4 py-2 rounded-lg w-40 bg-red-600 text-center'
+    className='text-xs sm:text-sm text-white font-bold hover:bg-red-900 px-4 py-3.5 rounded-lg w-40 bg-red-600 text-center'
   >
     Sell Now...
   </Link>

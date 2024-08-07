@@ -159,18 +159,18 @@ export default function CreateListing() {
         <div className='flex flex-col gap-4 flex-1'>
           <input
             type='text'
-            placeholder='Name'
+            placeholder='Product Name'
             className='border p-3 rounded-lg'
             id='name'
             maxLength='62'
-            minLength='10'
+            minLength='6'
             required
             onChange={handleChange}
             value={formData.name}
           />
           <textarea
             type='text'
-            placeholder='Description'
+            placeholder='Describe about product'
             className='border p-3 rounded-lg'
             id='description'
             required
@@ -179,7 +179,7 @@ export default function CreateListing() {
           />
           <input
             type='text'
-            placeholder='Address'
+            placeholder='Address (college only)'
             className='border p-3 rounded-lg'
             id='address'
             required
@@ -236,7 +236,7 @@ export default function CreateListing() {
               <div className='flex flex-col items-center'>
                 <p>Regular price</p>
                 {formData.type === 'rent' && (
-                  <span className='text-xs'>($ / month)</span>
+                  <span className='text-xs'>(₹)</span>
                 )}
               </div>
             </div>
@@ -256,7 +256,7 @@ export default function CreateListing() {
                   <p>Discounted price</p>
 
                   {formData.type === 'rent' && (
-                    <span className='text-xs'>($ / month)</span>
+                    <span className='text-xs'>(₹)</span>
                   )}
                 </div>
               </div>
