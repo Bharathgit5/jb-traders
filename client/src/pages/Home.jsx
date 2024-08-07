@@ -49,12 +49,12 @@ export default function Home() {
     <div>
       {/* top */}
       <div className='flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto'>
-        <h1 className='text-slate-700 font-bold text-3xl lg:text-6xl'>
-          Buy and Sell<span className='text-slate-500'> Student</span>
+        <h1 className='text-black-700 font-bold text-3xl lg:text-6xl'>
+          Buy and Sell<span className='text-black-500'> Student</span>
           <br />
           essensials with ease
         </h1>
-        <div className='text-gray-700 text-xs sm:text-sm'>
+        <div className='text-gray-700 text-xs sm:text-sm font-medium'>
          (Suggested Name) is a marketplace for students to buy, sell and rent essensials.
          
         </div>
@@ -62,15 +62,15 @@ export default function Home() {
         <div className="flex space-x-4 ">
   <Link
     to={'/search'}
-    className='text-xs sm:text-sm text-white font-bold hover:bg-green-900 px-4 py-3.5 rounded-lg w-40  bg-green-600 text-center'
+    className='text-xs sm:text-sm text-white font-bold hover:bg-green-500 px-4 py-3.5 rounded-lg w-40  bg-green-600 text-center'
     >
-    Buy Now...
+    Buy Now
   </Link>
   <Link
     to={'/create-listing'}
-    className='text-xs sm:text-sm text-white font-bold hover:bg-red-900 px-4 py-3.5 rounded-lg w-40 bg-red-600 text-center'
+    className='text-xs sm:text-sm text-white font-bold hover:bg-red-500 px-4 py-3.5 rounded-lg w-40 bg-red-600 text-center'
   >
-    Sell Now...
+    Sell Now
   </Link>
 </div>
 
@@ -114,8 +114,8 @@ export default function Home() {
         {rentListings && rentListings.length > 0 && (
           <div className=''>
             <div className='my-3'>
-              <h2 className='text-2xl font-semibold text-slate-600'>Recent places for rent</h2>
-              <Link className='text-sm text-blue-800 hover:underline' to={'/search?type=rent'}>Show more places for rent</Link>
+              <h2 className='text-2xl font-semibold text-slate-600'>Recent products for rent</h2>
+              <Link className='text-sm text-blue-800 hover:underline' to={'/search?type=rent'}>Show more products for rent</Link>
             </div>
             <div className='flex flex-wrap gap-4'>
               {rentListings.map((listing) => (
@@ -127,8 +127,8 @@ export default function Home() {
         {saleListings && saleListings.length > 0 && (
           <div className=''>
             <div className='my-3'>
-              <h2 className='text-2xl font-semibold text-slate-600'>Recent places for sale</h2>
-              <Link className='text-sm text-blue-800 hover:underline' to={'/search?type=sale'}>Show more places for sale</Link>
+              <h2 className='text-2xl font-semibold text-slate-600'>Recent products for sale</h2>
+              <Link className='text-sm text-blue-800 hover:underline' to={'/search?type=sale'}>Show more products for sale</Link>
             </div>
             <div className='flex flex-wrap gap-4'>
               {saleListings.map((listing) => (

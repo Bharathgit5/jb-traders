@@ -215,7 +215,7 @@ export default function Profile() {
         />
         <button
           disabled={loading}
-          className='bg-slate-700 text-white rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80'
+          className='bg-customBlue text-white rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80'
         >
           {loading ? 'Loading...' : 'Update'}
         </button>
@@ -226,25 +226,34 @@ export default function Profile() {
           Create Listing
         </Link>
       </form>
-      <div className='flex justify-between mt-5'>
-        <span
-          onClick={handleDeleteUser}
-          className='text-red-700 cursor-pointer'
-        >
-          Delete account
-        </span>
-        <span onClick={handleSignOut} className='text-red-700 cursor-pointer'>
-          Sign out
-        </span>
-      </div>
+      <div className='flex justify-between mt-5 space-x-4'>
 
-      <p className='text-red-700 mt-5'>{error ? error : ''}</p>
-      <p className='text-green-700 mt-5'>
-        {updateSuccess ? 'User is updated successfully!' : ''}
-      </p>
-      <button onClick={handleShowListings} className='text-green-700 w-full'>
-        Show Listings
-      </button>
+  <span
+    onClick={handleSignOut}
+    className='text-xs sm:text-sm  font-bold hover:bg-yellow-500 hover:text-white px-5 py-3.5 rounded-lg text-yellow-700 border border-yellow-700 text-center w-full'
+  >
+    Sign out
+  </span>
+  <button
+    onClick={handleShowListings}
+    className='text-xs sm:text-sm  font-bold hover:bg-blue-500 hover:text-white px-5 py-3.5 rounded-lg text-blue-700 border border-blue-700 text-center w-full'
+  >
+    Show Listings
+  </button>
+
+  <span
+    onClick={handleDeleteUser}
+    className='text-xs sm:text-sm  font-bold hover:bg-red-500 hover:text-white px-4 py-3.5 rounded-lg text-red-700 border border-red-700 text-center w-full'
+  >
+    Delete account
+  </span>
+</div>
+
+<p className='text-red-700 mt-5'>{error ? error : ''}</p>
+<p className='text-green-700 mt-1'>
+  {updateSuccess ? 'User is updated successfully!' : ''}
+</p>
+
       <p className='text-red-700 mt-5'>
         {showListingsError ? 'Error showing listings' : ''}
       </p>

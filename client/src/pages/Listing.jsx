@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css/bundle';
 import {
- 
+  
   FaMapMarkedAlt,
   FaMapMarkerAlt,
 
@@ -30,7 +30,7 @@ export default function Listing() {
     const fetchListing = async () => {
       try {
         setLoading(true);
-        const res = await fetch(`/api/listing/get/₹{params.listingId}`);
+        const res = await fetch(`/api/listing/get/${params.listingId}`);
         const data = await res.json();
         if (data.success === false) {
           setError(true);
@@ -62,7 +62,7 @@ export default function Listing() {
                 <div
                   className='h-[550px]'
                   style={{
-                    background: `url(₹{url}) center no-repeat`,
+                    background: `url(${url}) center no-repeat`,
                     backgroundSize: 'cover',
                   }}
                 ></div>
@@ -90,9 +90,9 @@ export default function Listing() {
             <p className='text-2xl font-semibold'>
               {listing.name} - ₹{' '}
               {listing.offer
-                ? listing.discountPrice.toLocaleString('en-US')
-                : listing.regularPrice.toLocaleString('en-US')}
-              {listing.type === 'rent' && ' / month'}
+                ? listing.discountPrice.toLocaleString('en-IN')
+                : listing.regularPrice.toLocaleString('en-IN')}
+              {listing.type === 'rent' && ' / college hours'}
             </p>
             <p className='flex items-center mt-6 gap-2 text-slate-600  text-sm'>
               <FaMapMarkerAlt className='text-green-700' />
@@ -112,11 +112,11 @@ export default function Listing() {
               <span className='font-semibold text-black'>Description - </span>
               {listing.description}
             </p>
-           
+         
             {currentUser && listing.userRef !== currentUser._id && !contact && (
               <button
                 onClick={() => setContact(true)}
-                className='bg-slate-700 text-white rounded-lg uppercase hover:opacity-95 p-3'
+                className='bg-customBlue text-white rounded-lg uppercase hover:opacity-95 p-3'
               >
                 Contact landlord
               </button>

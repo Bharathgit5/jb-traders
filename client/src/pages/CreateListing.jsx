@@ -23,7 +23,7 @@ export default function CreateListing() {
     regularPrice: 50,
     discountPrice: 0,
     offer: false,
-
+ 
   });
   const [imageUploadError, setImageUploadError] = useState(false);
   const [uploading, setUploading] = useState(false);
@@ -163,14 +163,14 @@ export default function CreateListing() {
             className='border p-3 rounded-lg'
             id='name'
             maxLength='62'
-            minLength='6'
+            minLength='5'
             required
             onChange={handleChange}
             value={formData.name}
           />
           <textarea
             type='text'
-            placeholder='Describe about product'
+            placeholder='Describe about the product'
             className='border p-3 rounded-lg'
             id='description'
             required
@@ -179,7 +179,7 @@ export default function CreateListing() {
           />
           <input
             type='text'
-            placeholder='Address (college only)'
+            placeholder='Address (only in college premises)'
             className='border p-3 rounded-lg'
             id='address'
             required
@@ -208,6 +208,7 @@ export default function CreateListing() {
               <span>Rent</span>
             </div>
           
+          
             <div className='flex gap-2'>
               <input
                 type='checkbox'
@@ -220,7 +221,6 @@ export default function CreateListing() {
             </div>
           </div>
           <div className='flex flex-wrap gap-6'>
-            
            
             <div className='flex items-center gap-2'>
               <input
@@ -236,7 +236,7 @@ export default function CreateListing() {
               <div className='flex flex-col items-center'>
                 <p>Regular price</p>
                 {formData.type === 'rent' && (
-                  <span className='text-xs'>(₹)</span>
+                  <span className='text-xs'>(₹ / college hours)</span>
                 )}
               </div>
             </div>
@@ -256,7 +256,7 @@ export default function CreateListing() {
                   <p>Discounted price</p>
 
                   {formData.type === 'rent' && (
-                    <span className='text-xs'>(₹)</span>
+                    <span className='text-xs'>(₹ / college hours)</span>
                   )}
                 </div>
               </div>
@@ -313,7 +313,7 @@ export default function CreateListing() {
             ))}
           <button
             disabled={loading || uploading}
-            className='p-3 bg-slate-700 text-white rounded-lg uppercase hover:opacity-95 disabled:opacity-80'
+            className='p-3 bg-customBlue text-white rounded-lg uppercase hover:opacity-95 disabled:opacity-80'
           >
             {loading ? 'Creating...' : 'Create listing'}
           </button>
