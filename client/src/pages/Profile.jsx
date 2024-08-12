@@ -257,8 +257,10 @@ export default function Profile() {
       <p className='text-red-700 mt-5'>
         {showListingsError ? 'Error showing listings' : ''}
       </p>
-
-      {userListings && userListings.length > 0 && (
+   {userListings && userListings.length === 0 && (
+    
+      <p className='text-center mt-7 text-2xl font-semibold'> No Listings</p> )}
+      {userListings && userListings.length > 0 &&  (
         <div className='flex flex-col gap-4'>
           <h1 className='text-center mt-7 text-2xl font-semibold'>
             Your Listings

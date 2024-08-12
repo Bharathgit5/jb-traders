@@ -5,6 +5,7 @@ import { Navigation } from 'swiper/modules';
 import SwiperCore from 'swiper';
 import 'swiper/css/bundle';
 import ListingItem from '../components/ListingItem';
+import Footer from '../components/Footer';
 
 export default function Home() {
   const [offerListings, setOfferListings] = useState([]);
@@ -55,7 +56,7 @@ export default function Home() {
           essensials with ease
         </h1>
         <div className='text-gray-700 text-xs sm:text-sm font-medium'>
-         (Suggested Name) is a marketplace for students to buy, sell and rent essensials.
+         EdxTrade is a marketplace for students to buy, sell and rent essensials.
          
         </div>
         
@@ -138,6 +139,7 @@ export default function Home() {
           </div>
         )}
       </div>
+      <Footer/>
     </div>
   );
 }
