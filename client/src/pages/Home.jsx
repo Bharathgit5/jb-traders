@@ -49,9 +49,10 @@ export default function Home() {
   return (
     <div>
       {/* top */}
+      <div className='bg-slate-300 shadow'>
       <div className='flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto'>
         <h1 className='text-black-700 font-bold text-3xl lg:text-6xl'>
-          Buy and Sell<span className='text-black-500'> Student</span>
+       <span className='text-green-600'>Buy</span> and <span className='text-red-600'>Sell</span><span className='text-slate-700'> Student</span>
           <br />
           essensials with ease
         </h1>
@@ -63,13 +64,13 @@ export default function Home() {
         <div className="flex space-x-4 ">
   <Link
     to={'/search'}
-    className='text-xs sm:text-sm text-white font-bold hover:bg-green-500 px-4 py-3.5 rounded-lg w-40  bg-green-600 text-center'
+    className='text-xs sm:text-sm text-green-600 font-bold hover:bg-green-600 hover:text-white  px-4 py-3.5  w-40 border border-green-600  text-center'
     >
     Buy Now
   </Link>
   <Link
     to={'/create-listing'}
-    className='text-xs sm:text-sm text-white font-bold hover:bg-red-500 px-4 py-3.5 rounded-lg w-40 bg-red-600 text-center'
+    className='text-xs sm:text-sm text-red-600 font-bold hover:bg-red-700 hover:text-white px-4 py-3.5  w-40 border border-red-600 text-center'
   >
     Sell Now
   </Link>
@@ -77,24 +78,9 @@ export default function Home() {
 
       
       </div>
-
+      </div>
       {/* swiper */}
-      <Swiper navigation>
-        {offerListings &&
-          offerListings.length > 0 &&
-          offerListings.map((listing) => (
-            <SwiperSlide   key={listing._id}>
-              <div
-                style={{
-                  background: `url(${listing.imageUrls[0]}) center no-repeat`,
-                  backgroundSize: 'cover',
-                }}
-                className='h-[500px]'
-              
-              ></div>
-            </SwiperSlide>
-          ))}
-      </Swiper>
+    
 
       {/* listing results for offer, sale and rent */}
 
