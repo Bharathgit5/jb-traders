@@ -1,41 +1,56 @@
 import React from 'react';
-import { FaTwitter, FaFacebook, FaWhatsapp } from 'react-icons/fa';
+import { Link } from "react-router-dom"; 
+import { FaEnvelope, FaWhatsapp, FaHome, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white py-8">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          {/* Logo and Copyright Section */}
-          <div className="text-center md:text-left mb-4 md:mb-0">
-            <h2 className="text-lg font-semibold">EdxTrade</h2>
-            <p className="mt-2">© 2024 EdxTrade. All rights reserved.</p>
-          </div>
-          
-          {/* Navigation Links */}
-          <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8 text-center md:text-left mb-4 md:mb-0">
-            <a href="/terms-and-conditions" className="hover:text-gray-400">Terms and Conditions</a>
-            <a href="/privacy-policy" className="hover:text-gray-400">Privacy Policy</a>
-            <a href="/how-to-use" className="hover:text-gray-400">How to Use</a>
-            <a href="/contact" className="hover:text-gray-400">Contact Us</a>
-          </div>
+    <>
+      <section id='contact-section' className="w-4/5 p-4 mx-auto mt-5 bg-white text-black rounded-lg shadow-md">
+        <h2 className='text-3xl font-bold text-center pb-5'>Contact us</h2>
+        <div className='flex justify-center items-center space-x-8'>
+          <a href="mailto: bharathjbiet10@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="mail">
+            <FaEnvelope className="text-2xl text-black" />
+          </a>
+          <a href="https://wa.me/918639954433" target="_blank" rel="noopener noreferrer" aria-label="whatsapp">
+            <FaWhatsapp className="text-2xl text-black" />
+          </a>
+          <a href="https://maps.app.goo.gl/TrRqjH5Ky23T8aBc7" target="_blank" rel="noopener noreferrer" aria-label="address">
+            <FaHome className="text-2xl text-black" />
+          </a>    
+        </div> 
+      </section>
 
-          {/* Social Media Icons */}
-          <div className="flex space-x-6">
-            <a href="https://twitter.com" aria-label="Twitter" className="hover:text-gray-400">
-              <FaTwitter size={24} />
-            </a>
-            <a href="https://facebook.com" aria-label="Facebook" className="hover:text-gray-400">
-              <FaFacebook size={24} />
-            </a>
-            <a href="https://wa.me/1234567890" aria-label="WhatsApp" className="hover:text-gray-400">
-              <FaWhatsapp size={24} />
-            </a>
-          </div>
+      <section id="footer" className="w-4/5 p-4 mx-auto mt-5 mb-5 bg-white text-black rounded-lg shadow-md">
+        <h2 className='text-3xl font-bold text-center pb-5'>Connect with me</h2>
+        <div className='flex justify-center items-center space-x-8'>
+          <a href="https://twitter.com/Bharathtwt1?t=LWGqlQmRF9NzBRojKtGSxw&s=08" target="_blank" rel="noopener noreferrer" aria-label="twitter">
+            <FaTwitter className="text-2xl text-black" />
+          </a>
+          <a href="https://www.linkedin.com/in/bharath-k-6436a11b2" target="_blank" rel="noopener noreferrer" aria-label="linkedin">
+            <FaLinkedin className="text-2xl text-black" />
+          </a>
+          <a href="https://www.instagram.com/bharathk_ig/" target="_blank" rel="noopener noreferrer" aria-label="instagram">
+            <FaInstagram className="text-2xl text-black" />
+          </a>
+          <a href="mailto: bharathjbiet10@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="mail">
+            <FaEnvelope className="text-2xl text-black" />
+          </a>
         </div>
+      </section>
+
+      <div className='text-center mb-5'>
+        <Link to="/Termsandconditions" className='text-black no-underline mx-2'>Terms and Conditions</Link> |
+        <Link to="/PrivacyPolicy" className='text-black no-underline mx-2'>Privacy Policy</Link> |
+
+        <Link to="/Aboutus" className='text-black no-underline mx-2'>About Us</Link>
       </div>
-    </footer>
-  );
-};
+
+      <div className="text-center mt-5">
+        © 2024 | DEVELOPED BY: 
+        <a href="https://www.instagram.com/bharathk_ig/" className='text-black no-underline ml-2'>Bharath</a>
+      </div>
+    </>
+  )
+}
 
 export default Footer;
