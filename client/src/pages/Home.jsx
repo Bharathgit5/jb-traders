@@ -8,6 +8,7 @@ import ListingItem from '../components/ListingItem';
 import Footer from '../components/Footer';
 import { gsap, Power3 } from 'gsap';
 
+
 export default function Home() {
   const [offerListings, setOfferListings] = useState([]);
   const [saleListings, setSaleListings] = useState([]);
@@ -94,33 +95,35 @@ export default function Home() {
   return (
     <div>
       {/* top */}
-      <div className='bg-slate-300 shadow'>
+      <div className=' shadow'  style={{
+    background: 'linear-gradient(rgb(0, 105, 255) 0%, rgb(20, 51, 214) 100%) center top / cover no-repeat',
+  }}>
         <div className='flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto'>
           <h1
             ref={headerRef}
-            className='text-black-700 font-bold text-3xl lg:text-6xl'
+            className='text-white font-bold text-3xl lg:text-6xl'
           >
-            <span className='text-green-600'>Buy</span> and{' '}
-            <span className='text-red-600'>Sell</span>
-            <span className='text-slate-700'> Student</span>
+            <span className='text-white'>Buy</span> and{' '}
+            <span className='text-white'>Sell</span>
+            <span className='text-white'> Student</span>
             <br />
             essentials with ease
           </h1>
-          <div className='text-gray-700 text-xs sm:text-sm font-medium' ref={descRef}>
+          <div className='text-white text-xs sm:text-sm font-medium' ref={descRef}>
             EdxTrade is a marketplace for students to buy, sell and rent essentials.
           </div>
           <div className="flex space-x-4">
             <Link
               ref={buyNowRef}
               to={'/search'}
-              className='text-xs sm:text-sm text-green-600 font-bold hover:bg-green-600 hover:text-white  px-4 py-3.5  w-40 border border-green-600  text-center'
+              className='text-xs sm:text-sm text-white font-bold hover:bg-green-600 hover:text-white  px-4 py-3.5  w-40 border-2 border-green-600  text-center'
             >
               Buy Now
             </Link>
             <Link
               ref={sellNowRef}
               to={'/create-listing'}
-              className='text-xs sm:text-sm text-red-600 font-bold hover:bg-red-700 hover:text-white px-4 py-3.5  w-40 border border-red-600 text-center'
+              className='text-xs sm:text-sm text-white font-bold hover:bg-red-700 hover:text-white px-4 py-3.5  w-40 border-2 border-red-600 text-center'
             >
               Sell Now
             </Link>
@@ -178,6 +181,7 @@ export default function Home() {
       </div>
 
       {!loading && <Footer />} {/* Render Footer only after loading */}
+      
     </div>
   );
 }
