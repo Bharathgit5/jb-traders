@@ -38,10 +38,10 @@ const Footer = () => {
         </div>
       </section>
 
-      <div className='text-center mb-5'>
-        <Link to="/Termsandconditions" className='text-black no-underline mx-2'>Terms and Conditions</Link>
-        <Link to="/PrivacyPolicy" className='text-black no-underline mx-2'>Privacy Policy</Link>
-        <Link to="/Aboutus" className='text-black no-underline mx-2'>About Us</Link>
+      <div className='text-center mb-5 '>
+        <Link to="/Termsandconditions" className='text-black no-underline mx-1'>Terms and Conditions</Link>
+        <Link to="/PrivacyPolicy" className='text-black no-underline mx-1'>Privacy Policy</Link>
+        <Link to="/Aboutus" className='text-black no-underline mx-1 '>About Us</Link>
       </div>
 
       <div className="text-center mt-5">
