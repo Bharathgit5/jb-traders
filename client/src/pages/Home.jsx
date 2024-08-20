@@ -11,7 +11,7 @@ import { gsap, Power3 } from 'gsap';
 
 export default function Home() {
   const [offerListings, setOfferListings] = useState([]);
-  const [saleListings, setSaleListings] = useState([]);
+  const [sellListings, setsellListings] = useState([]);
   const [rentListings, setRentListings] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -40,17 +40,17 @@ export default function Home() {
         const res = await fetch('/api/listing/get?type=rent&limit=4');
         const data = await res.json();
         setRentListings(data);
-        fetchSaleListings();
+        fetchsellListings();
       } catch (error) {
         console.log(error);
       }
     };
 
-    const fetchSaleListings = async () => {
+    const fetchsellListings = async () => {
       try {
-        const res = await fetch('/api/listing/get?type=sale&limit=4');
+        const res = await fetch('/api/listing/get?type=sell&limit=4');
         const data = await res.json();
-        setSaleListings(data);
+        setsellListings(data);
         setLoading(false);
       } catch (error) {
         console.log(error);
@@ -131,7 +131,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* listing results for offer, sale and rent */}
+      {/* listing results for offer, sell and rent */}
       <div className='max-w-6xl mx-auto p-3 flex flex-col gap-8 my-10'>
         {loading ? (
           <div className='text-center text-xl font-semibold text-slate-600'>Loading listings...</div>
@@ -163,14 +163,14 @@ export default function Home() {
                 </div>
               </div>
             )}
-            {saleListings.length > 0 && (
+            {sellListings.length > 0 && (
               <div className=''>
                 <div className='my-3'>
-                  <h2 className='text-2xl font-semibold text-slate-600'>Recent products for sale</h2>
-                  <Link className='text-sm text-blue-800 hover:underline' to={'/search?type=sale'}>Show more products for sale</Link>
+                  <h2 className='text-2xl font-semibold text-slate-600'>Recent products for sell</h2>
+                  <Link className='text-sm text-blue-800 hover:underline' to={'/search?type=sell'}>Show more products for sell</Link>
                 </div>
                 <div className='flex flex-wrap gap-4'>
-                  {saleListings.map((listing) => (
+                  {sellListings.map((listing) => (
                     <ListingItem listing={listing} key={listing._id} />
                   ))}
                 </div>
