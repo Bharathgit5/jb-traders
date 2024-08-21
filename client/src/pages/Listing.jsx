@@ -100,7 +100,7 @@ export default function Listing() {
             </p>
             <div className='flex gap-4'>
               <p className='bg-orange-500 w-full max-w-[200px] text-white text-center p-1 rounded-md'>
-                {listing.type === 'rent' ? 'For Rent' : 'For sell'}
+                {listing.type === 'rent' ? 'For Rent' : 'For sale'}
               </p>
               {listing.offer && (
                 <p className='bg-green-900 w-full max-w-[200px] text-white text-center p-1 rounded-md'>
