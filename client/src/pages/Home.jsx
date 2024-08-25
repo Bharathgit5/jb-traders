@@ -166,7 +166,7 @@ export default function Home() {
             {sellListings.length > 0 && (
               <div className=''>
                 <div className='my-3'>
-                  <h2 className='text-2xl font-semibold text-slate-600'>Recent products for sell</h2>
+                  <h2 className='text-2xl font-semibold text-slate-600'>Recent products for sale</h2>
                   <Link className='text-sm text-blue-800 hover:underline' to={'/search?type=sell'}>Show more products for sell</Link>
                 </div>
                 <div className='flex flex-wrap gap-4'>
