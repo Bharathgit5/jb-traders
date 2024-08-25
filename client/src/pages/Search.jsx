@@ -7,7 +7,6 @@ export default function Search() {
   const [sidebardata, setSidebardata] = useState({
     searchTerm: '',
     type: 'all',
-   
     offer: false,
     sort: 'created_at',
     order: 'desc',
@@ -21,7 +20,7 @@ export default function Search() {
     const urlParams = new URLSearchParams(location.search);
     const searchTermFromUrl = urlParams.get('searchTerm');
     const typeFromUrl = urlParams.get('type');
-  
+ 
     const offerFromUrl = urlParams.get('offer');
     const sortFromUrl = urlParams.get('sort');
     const orderFromUrl = urlParams.get('order');
@@ -29,7 +28,7 @@ export default function Search() {
     if (
       searchTermFromUrl ||
       typeFromUrl ||
-     
+  
       offerFromUrl ||
       sortFromUrl ||
       orderFromUrl
@@ -37,7 +36,7 @@ export default function Search() {
       setSidebardata({
         searchTerm: searchTermFromUrl || '',
         type: typeFromUrl || 'all',
-        
+
         offer: offerFromUrl === 'true' ? true : false,
         sort: sortFromUrl || 'created_at',
         order: orderFromUrl || 'desc',
@@ -48,7 +47,7 @@ export default function Search() {
       setLoading(true);
       setShowMore(false);
       const searchQuery = urlParams.toString();
-      const res = await fetch(`/api/listing/get?₹{searchQuery}`);
+      const res = await fetch(`/api/listing/get?${searchQuery}`);
       const data = await res.json();
       if (data.length > 8) {
         setShowMore(true);
@@ -66,7 +65,7 @@ export default function Search() {
     if (
       e.target.id === 'all' ||
       e.target.id === 'rent' ||
-      e.target.id === 'sell'
+      e.target.id === 'sale'
     ) {
       setSidebardata({ ...sidebardata, type: e.target.id });
     }
@@ -100,12 +99,11 @@ export default function Search() {
     const urlParams = new URLSearchParams();
     urlParams.set('searchTerm', sidebardata.searchTerm);
     urlParams.set('type', sidebardata.type);
- 
     urlParams.set('offer', sidebardata.offer);
     urlParams.set('sort', sidebardata.sort);
     urlParams.set('order', sidebardata.order);
     const searchQuery = urlParams.toString();
-    navigate(`/search?₹{searchQuery}`);
+    navigate(`/search?${searchQuery}`);
   };
 
   const onShowMoreClick = async () => {
@@ -148,7 +146,7 @@ export default function Search() {
                 onChange={handleChange}
                 checked={sidebardata.type === 'all'}
               />
-              <span>Rent & sell</span>
+              <span>Rent & Sale</span>
             </div>
             <div className='flex gap-2'>
               <input
@@ -163,12 +161,12 @@ export default function Search() {
             <div className='flex gap-2'>
               <input
                 type='checkbox'
-                id='sell'
+                id='sale'
                 className='w-5'
                 onChange={handleChange}
-                checked={sidebardata.type === 'sell'}
+                checked={sidebardata.type === 'sale'}
               />
-              <span>sell</span>
+              <span>Sale</span>
             </div>
             <div className='flex gap-2'>
               <input
@@ -181,7 +179,7 @@ export default function Search() {
               <span>Offer</span>
             </div>
           </div>
-          
+         
           <div className='flex items-center gap-2'>
             <label className='font-semibold'>Sort:</label>
             <select
@@ -196,7 +194,7 @@ export default function Search() {
               <option value='createdAt_asc'>Oldest</option>
             </select>
           </div>
-          <button className='bg-customBlue text-white p-3 rounded-lg uppercase hover:opacity-95'>
+          <button className='bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95'>
             Search
           </button>
         </form>
